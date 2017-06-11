@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FCC Image Search Abstraction Layer Project</title>
+	<style>
+		code {
+		    padding: 2px 4px;
+		    font-size: 90%;
+		    color: #c7254e;
+		    background-color: #f9f2f4;
+		    border-radius: 4px;
+		}
+	</style>
+</head>
+<body>
+	<h1>FreeCodeCamp API Project: Image Search Abstraction Layer</h1>
+	<h3>User Stories</h3>
+	<ul>
+		<li>I can get the image URLs, alt text and page urls for a set of images relating to a given search string.</li>
+		<li>I can paginate through the responses by adding a ?offset=2 parameter to the URL.</li>
+		<li>I can get a list of the most recently submitted search strings.</li>
+	</ul>
+	<h2>Example usage</h2>
+	<code>http://fcc-image-search-api-layer.herokuapp.com/search/funny?offset=10 <br>
+		  http://fcc-image-search-api-layer.herokuapp.com/latest</code>
+	<div>
+		<h2>Example query output</h2>
+		<code>{"data":[{"img_url":"http://imgur.com/a/pHb9N","alt_text":"Yup. Cats do that to you","context":"https://imgur.com/pHb9N"},{"img_url":"http://imgur.com/a/7rgvV","alt_text":"Watermelon and a drawing of cats eating a watermelon.","context":"https://imgur.com/7rgvV"},{"img_url":"http://imgur.com/a/MPekc","alt_text":"Imgur you want cats you get cats","context":"https://imgur.com/MPekc"},..</code>
+	</div>
+	<div>
+		<h2>Example latest output</h2>
+		<code>[{"data":[{"img_url":"http://imgur.com/a/pHb9N","alt_text":"Yup. Cats do that to you","context":"https://imgur.com/pHb9N"},{"img_url":"http://imgur.com/a/7rgvV","alt_text":"Watermelon and a drawing of cats eating a watermelon.","context":"https://imgur.com/7rgvV"},...]</code>
+	</div>
+</body>
+</html>
