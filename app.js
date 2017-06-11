@@ -5,6 +5,7 @@ var bodyParser = require('body-parser')
 var app = express();
 
 PORT = process.env.PORT || 8000;
+var ClientId = process.env.ClientId
 var db = mongo.db(process.env.MONGOLAB_URI,{native_parser:true});
 
 
@@ -17,8 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/",function(req,res){
-	//console.log(req.db);
-	res.redirect('/search/cats?offset=1');
+	res.sendFile("./index.html"));
 })
 
 app.get("/search/:query",function(req,res){
@@ -31,7 +31,7 @@ app.get("/search/:query",function(req,res){
 				method: 'GET',
 			  url: url,
 			  qs: { q: q },
-			  headers: { 'content-type': 'application/json',authorization: 'Client-ID 41c94594406523c' }
+			  headers: { 'content-type': 'application/json',authorization: `Client-ID ${ClientId}` }
 			};
 
 	request(options, function (err, response, body) {
