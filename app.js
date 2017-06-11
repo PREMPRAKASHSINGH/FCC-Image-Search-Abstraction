@@ -64,7 +64,7 @@ app.get("/search/:query",function(req,res){
 
 app.get("/latest",function(req,res){
 	var db = req.db;
-	db.collection('image_search').find({},{_id:0}).sort({time: 1}).toArray(function(err,data){
+	db.collection('image_search').find({},{_id:0}).sort({time: -1}).toArray(function(err,data){
 		if(err){
 	  			res.json({Status:0,msg:"Some Error occured."});
 	  		}else{
