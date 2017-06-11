@@ -1,6 +1,7 @@
 var express = require('express');
 var mongo = require('mongoskin');
 var request = require('request');
+var path = require('path');
 var bodyParser = require('body-parser')
 var app = express();
 
@@ -18,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/",function(req,res){
-	res.sendFile("./index.html"));
+    res.sendFile(path.join(__dirname+"/index.html"));
 })
 
 app.get("/search/:query",function(req,res){
